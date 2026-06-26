@@ -10,13 +10,13 @@ import com.zepto.auth.dto.AuthResponse;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-	@ExceptionHandler(InvalidCredentialsException.class)
-	public ResponseEntity<AuthResponse> handleInvalidCredentialsException(
-	        InvalidCredentialsException ex) {
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<String> handleResourceNotFoundException(
+	        ResourceNotFoundException ex) {
 
 	    return ResponseEntity
-	            .status(HttpStatus.UNAUTHORIZED)
-	            .body(new AuthResponse(ex.getMessage()));
+	            .status(HttpStatus.NOT_FOUND)
+	            .body(ex.getMessage());
 	}
     
     

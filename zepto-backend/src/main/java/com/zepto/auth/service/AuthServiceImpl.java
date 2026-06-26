@@ -34,7 +34,8 @@ public class AuthServiceImpl implements AuthService {
                 .email(request.getEmail())
                 .phone(request.getPhone())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(Role.ROLE_USER)
+//                .role(Role.ROLE_USER)
+                .role(Role.ROLE_ADMIN)
                 .enabled(true)
                 .build();
 
