@@ -26,7 +26,7 @@ public class ProductResponse {
 
     private BigDecimal discountPrice;
 
-    private Integer stock;
+//    private Integer stock;
 
     private String brand;
 

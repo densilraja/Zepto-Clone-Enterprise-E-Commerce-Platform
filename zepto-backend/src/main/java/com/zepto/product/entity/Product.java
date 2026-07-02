@@ -36,8 +36,8 @@ public class Product {
 
     private BigDecimal discountPrice;
 
-    @Column(nullable = false)
-    private Integer stock;
+//    @Column(nullable = false)
+//    private Integer stock;
 
     private String brand;
 

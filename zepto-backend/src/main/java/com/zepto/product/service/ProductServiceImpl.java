@@ -40,7 +40,7 @@ public class ProductServiceImpl implements ProductService {
                 .description(request.getDescription())
                 .price(request.getPrice())
                 .discountPrice(request.getDiscountPrice())
-                .stock(request.getStock())
+//                .stock(request.getStock())
                 .brand(request.getBrand())
                 .unit(request.getUnit())
                 .imageUrl(request.getImageUrl())
@@ -87,7 +87,7 @@ public class ProductServiceImpl implements ProductService {
         product.setDescription(request.getDescription());
         product.setPrice(request.getPrice());
         product.setDiscountPrice(request.getDiscountPrice());
-        product.setStock(request.getStock());
+//        product.setStock(request.getStock());
         product.setBrand(request.getBrand());
         product.setUnit(request.getUnit());
         product.setImageUrl(request.getImageUrl());
@@ -138,7 +138,7 @@ public class ProductServiceImpl implements ProductService {
                 .description(product.getDescription())
                 .price(product.getPrice())
                 .discountPrice(product.getDiscountPrice())
-                .stock(product.getStock())
+//                .stock(product.getStock())
                 .brand(product.getBrand())
                 .unit(product.getUnit())
                 .imageUrl(product.getImageUrl())
