@@ -1,8 +1,8 @@
-package com.zepto.cart.dto;
+package com.zepto.user.dto;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
+
+import com.zepto.user.entity.UserRole;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,17 +15,21 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CartResponse {
+public class UserResponse {
 
-    private Long cartId;
+    private Long id;
 
-    private Long userId;
+    private String firstName;
 
-    private List<CartItemResponse> items;
+    private String lastName;
 
-    private Integer totalItems;
+    private String email;
 
-    private BigDecimal totalAmount;
+    private String phone;
+
+    private UserRole role;
+
+    private Boolean enabled;
 
     private LocalDateTime createdAt;
 
