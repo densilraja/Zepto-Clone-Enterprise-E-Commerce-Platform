@@ -192,8 +192,7 @@ public class CartServiceImpl implements CartService {
                         -> new ResourceNotFoundException("User not found"));
 
         Cart cart = cartRepository.findByUser(user)
-                .orElseThrow(()
-                        -> new ResourceNotFoundException("Cart not found"));
+                .orElseThrow(() -> new RuntimeException("Cart not found"));
 
         cartItemRepository.deleteAll(cart.getCartItems());
     }

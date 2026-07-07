@@ -5,8 +5,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.zepto.auth.entity.User;
-import com.zepto.auth.repository.UserRepository;
+import com.zepto.user.entity.User;
+import com.zepto.user.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 

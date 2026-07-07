@@ -1,18 +1,17 @@
 package com.zepto.auth.service;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
-
 import org.springframework.stereotype.Service;
 
 import com.zepto.auth.dto.AuthResponse;
 import com.zepto.auth.dto.LoginRequest;
 import com.zepto.auth.dto.RegisterRequest;
-import com.zepto.auth.entity.Role;
-import com.zepto.auth.entity.User;
-import com.zepto.auth.repository.UserRepository;
 import com.zepto.common.exception.InvalidCredentialsException;
 import com.zepto.common.exception.ResourceAlreadyExistsException;
 import com.zepto.security.JwtService;
+import com.zepto.user.entity.User;
+import com.zepto.user.entity.UserRole;
+import com.zepto.user.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -35,7 +34,7 @@ public class AuthServiceImpl implements AuthService {
                 .phone(request.getPhone())
                 .password(passwordEncoder.encode(request.getPassword()))
 //                .role(Role.ROLE_USER)
-                .role(Role.ROLE_ADMIN)
+                .role(UserRole.ROLE_ADMIN)
                 .enabled(true)
                 .build();
 

@@ -1,7 +1,10 @@
 package com.zepto.order.dto;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import java.math.BigDecimal;
+import java.util.List;
+
+import com.zepto.order.entity.OrderStatus;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,15 +16,22 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class OrderRequest {
+public class OrderResponse {
 
-    @NotNull(message = "User ID is required")
+    private Long orderId;
+
+    private String orderNumber;
+
     private Long userId;
 
-    @NotBlank(message = "Delivery address is required")
+    private OrderStatus orderStatus;
+
+    private BigDecimal totalAmount;
+
     private String deliveryAddress;
 
-    @NotBlank(message = "Contact number is required")
     private String contactNumber;
+
+    private List<OrderItemResponse> orderItems;
 
 }
