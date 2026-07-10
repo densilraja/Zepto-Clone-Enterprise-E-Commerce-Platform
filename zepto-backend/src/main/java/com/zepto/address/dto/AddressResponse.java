@@ -1,5 +1,7 @@
 package com.zepto.address.dto;
 
+import java.time.LocalDateTime;
+
 import com.zepto.address.entity.AddressType;
 
 import lombok.AllArgsConstructor;
@@ -13,7 +15,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AddressRequest {
+public class AddressResponse {
+
+    private Long id;
 
     private Long userId;
 
@@ -36,5 +40,11 @@ public class AddressRequest {
     private AddressType addressType;
 
     private Boolean defaultAddress;
+
+    private Boolean active;
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
 
 }
