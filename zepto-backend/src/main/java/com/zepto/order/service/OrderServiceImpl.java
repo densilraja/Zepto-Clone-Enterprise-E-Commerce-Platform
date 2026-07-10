@@ -47,7 +47,7 @@ public class OrderServiceImpl implements OrderService {
         Order order = Order.builder()
                 .orderNumber("ORD-" + System.currentTimeMillis())
                 .user(user)
-                .orderStatus(com.zepto.order.entity.OrderStatus.PENDING)
+                .orderStatus(OrderStatus.PENDING_PAYMENT)
                 .deliveryAddress(request.getDeliveryAddress())
                 .contactNumber(request.getContactNumber())
                 .totalAmount(

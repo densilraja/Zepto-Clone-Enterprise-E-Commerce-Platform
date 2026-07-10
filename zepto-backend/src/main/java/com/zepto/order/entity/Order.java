@@ -4,8 +4,10 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.zepto.payment.entity.Payment;
 import com.zepto.user.entity.User;
-
+import com.zepto.delivery.entity.Delivery;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,6 +20,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -65,5 +68,13 @@ public class Order {
 
     @Column(nullable = false)
     private String contactNumber;
+
+    @OneToOne(mappedBy = "order",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    private Payment payment;
+
+    @OneToOne(mappedBy = "order")
+    private Delivery delivery;
 
 }
